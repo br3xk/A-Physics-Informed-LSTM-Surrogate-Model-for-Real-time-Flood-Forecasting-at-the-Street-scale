@@ -7,10 +7,14 @@ L_total= α * L_data+ β * L_phy
 
 
 Data Loss
+
 L_data=1/N ∑_(n=1)^N▒(h_t^n-〖h ̂_t^n〗_  )^2   + 1/N ∑_(n=1)^N▒(v_t^n-v ̂_t^n )^2 
 
+
 Physics Loss
-We used two formulations for physics loss. 
+
+We used two formulations for physics loss.
+
   1. Exact Equation
   The change of flood volume at the current timestep is equal to the net difference between the total inflow and the total outflow that occurred during the current and previous timestep.
 
