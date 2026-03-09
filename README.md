@@ -23,3 +23,4 @@ The change of flood volume at the current timestep can not exceed the flow enter
 The input features used for the data loss were hourly rainfall, hourly tide level, elevation, Topographic Wetness Index (TWI), and Depth-to-Water (DTW). The input features used for the physics loss were hourly inflow volume, hourly outflow volume, hourly rainfall volume, and hourly pipe flow volume. The models included two target features – flood depth and flood volume. The water depth raster was collected from the TUFLOW model through a coupled 1D/2D simulation for each hour throughout all storm events. The water volume was calculated by summing the hourly water depths over the inundated area within the street segment using the zonal statistics tool of ArcGIS Pro.
 
 The framework for PI LSTM surrogate model is shown in Figure 1
+<img width="975" height="640" alt="image" src="https://github.com/user-attachments/assets/cdcc3e7a-dad5-48fe-ba41-39216af444b5" />
