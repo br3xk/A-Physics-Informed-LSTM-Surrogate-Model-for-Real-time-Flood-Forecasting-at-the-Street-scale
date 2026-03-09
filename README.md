@@ -15,7 +15,7 @@ $$
 **Data Loss**
 
 Data loss $L_{data}$ is formulated to ensure that the predicted flood depths and volumes are consistent with ground-truth flood depths and volumes
-($(h = \hat{h})$ and $(v = \hat{v})$ ).
+$(h = \hat{h})$ and $(v = \hat{v})$.
 
 <!--
 $$
