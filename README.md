@@ -52,9 +52,12 @@ $$
 
 The input features used for the data loss are hourly rainfall, hourly tide level, elevation, Topographic Wetness Index (TWI), and Depth-to-Water (DTW). The input features used for the physics loss are hourly inflow volume, hourly outflow volume, hourly rainfall volume, and hourly pipe flow volume. The models includes two target features – flood depth and flood volume. The water depth raster is collected from the TUFLOW model through a coupled 1D/2D simulation for each hour throughout all storm events. The water volume is calculated by summing the hourly water depths over the inundated area within the street segment using the zonal statistics tool of ArcGIS Pro. The input data is available on Hydroshare (Roy, 2026).
 
-The framework for PI LSTM surrogate model is shown in Figure 1
+The framework for PI LSTM surrogate model is shown in Figure 1.
+
 <img width="975" height="640" alt="image" src="https://github.com/user-attachments/assets/cdcc3e7a-dad5-48fe-ba41-39216af444b5" />
 Figure 1: General framework of PI LSTM model with mass balance equations.
+
+
 
 
 **References**
