@@ -27,9 +27,7 @@ We used two formulations for physics loss:
   The change of flood volume at the current timestep is equal to the net difference between the total inflow and the total outflow that occurred during the current and previous timestep.
 
 $$
-(\hat{v}_t^n - \hat{v}_{t-1}^n) -
-(Qin_{(t-1,t]}^n \Delta t + R_{(t-1,t]}^n \cdot Street\ Area
-- Qout_{(t-1,t]}^n \Delta t - Qpipe_{(t-1,t]}^n \Delta t) = 0
+(\hat{v}_t^n - \hat{v}_{t-1}^n) - (Qin_{(t-1,t]}^n \Delta t + R_{(t-1,t]}^n \cdot Street\ Area - Qout_{(t-1,t]}^n \Delta t - Qpipe_{(t-1,t]}^n \Delta t) = 0
 $$
 
   **2. Inequality Equation**
