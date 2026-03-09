@@ -27,11 +27,25 @@ We used two formulations for physics loss:
   **1. Exact Equation**
   The change of flood volume at the current timestep is equal to the net difference between the total inflow and the total outflow that occurred during the current and previous timestep.
 
+$$
+(\hat{v}_t^n - \hat{v}_{t-1}^n) -
+(Qin_{(t-1,t]}^n \Delta t + R_{(t-1,t]}^n \cdot Street\ Area
+- Qout_{(t-1,t]}^n \Delta t - Qpipe_{(t-1,t]}^n \Delta t) = 0
+$$
   (v ̂_t^n- v ̂_(t-1)^n)-(〖Qin〗_(t-1,t]^n*∆t+R_((t-1,t])^n*Street Area-〖Qout〗_(t-1,t]^n*∆t-〖Qpipe〗_(t-1,t]^n*∆t) = 0
 
   **2. Inequality Equation**
   The change of flood volume at the current timestep can not exceed the flow entering the system between the current and previous timestep.
 
+$$
+(\hat{v}_t^n - v_{t-1}^n) -
+(Qin_{(t-1,t]}^n \Delta t + R_{(t-1,t]}^n \cdot Street\ Area) \le 0
+$$
+
+$$
+(v_{t+1}^n - \hat{v}_t^n) -
+(Qin_{(t,t+1]}^n \Delta t + R_{(t,t+1]}^n \cdot Street\ Area) \le 0
+$$
   (v ̂_t^n- v_(t-1)^n )-(〖Qin〗_(t-1,t]^n*∆t+R_((t-1,t])^n*Street Area)≤  0
   (v_(t+1)^n- v ̂_t^n )-(〖Qin〗_(t,t+1]^n*∆t+R_((t,t+1])^n*Street Area)≤ 0
 
