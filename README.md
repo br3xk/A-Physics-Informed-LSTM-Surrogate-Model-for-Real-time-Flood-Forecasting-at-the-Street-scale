@@ -58,7 +58,7 @@ The framework for PI LSTM surrogate model is shown in Figure 1.
 Figure 1: General framework of PI LSTM model with mass balance equations.
 
 
-
+<br>
 
 **References**
 
