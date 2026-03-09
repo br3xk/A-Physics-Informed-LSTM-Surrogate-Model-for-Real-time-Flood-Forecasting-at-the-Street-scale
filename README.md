@@ -12,12 +12,15 @@ $$
 
 **Data Loss**
 
+<!--
+
+
 $$
 L_{data} =
 \frac{1}{N}\sum_{n=1}^{N}(h_t^n - \hat{h}_t^n)^2 +
 \frac{1}{N}\sum_{n=1}^{N}(v_t^n - \hat{v}_t^n)^2
 $$
-
+-->
 
 **Physics Loss**
 
