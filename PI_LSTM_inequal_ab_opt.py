@@ -13,8 +13,7 @@ L_total= (α * L_data + β * L_phy)
 In this script, the inequality MB equations are enforced, which state that the change of flood volume at the current timestep can not exceed the flow entering the system between the current and previous timestep.
 ∆ volume_(t) ≤ Qin_(t) * ∆t + Rain_vol_(t) * Area
 ∆ volume_(t+1) ≤ Qin_(t+1) * ∆t + Rain_vol_(t+1) * Area
-
-                                                                             
+                                                                      
 Model Details:
 --------------
 - Forecast horizon: 4 hours (n_ahead = 4)
@@ -49,11 +48,7 @@ Functionality:
 - Selects the best hyperparameters based on 'val_rmse_wd'.
 - Trains PI LSTM model (Inequality) using the best hyperparameters, saves the model, and writes predictions to CSV files.
 
-
-
 """
-
-
 
 import os
 import pandas as pd
@@ -633,4 +628,5 @@ best_model, train_loss_results, train_loss_data_results, train_loss_phy_results,
 
 # # Save the model
 best_model.save(f"1.Result_PI_LSTM_Opt_hp/{hp_model}_{trial_all}.h5")
+
 print(f"Saved {hp_model} to disk")
