@@ -18,7 +18,6 @@ L_{data} =
 \frac{1}{N}\sum_{n=1}^{N}(v_t^n - \hat{v}_t^n)^2
 $$
 
-L_data=1/N ∑_(n=1)^N▒(h_t^n-〖h ̂_t^n〗_  )^2   + 1/N ∑_(n=1)^N▒(v_t^n-v ̂_t^n )^2 
 
 **Physics Loss**
 
@@ -32,7 +31,7 @@ $$
 (Qin_{(t-1,t]}^n \Delta t + R_{(t-1,t]}^n \cdot Street\ Area
 - Qout_{(t-1,t]}^n \Delta t - Qpipe_{(t-1,t]}^n \Delta t) = 0
 $$
-  (v ̂_t^n- v ̂_(t-1)^n)-(〖Qin〗_(t-1,t]^n*∆t+R_((t-1,t])^n*Street Area-〖Qout〗_(t-1,t]^n*∆t-〖Qpipe〗_(t-1,t]^n*∆t) = 0
+
 
   **2. Inequality Equation**
   The change of flood volume at the current timestep can not exceed the flow entering the system between the current and previous timestep.
@@ -46,8 +45,7 @@ $$
 (v_{t+1}^n - \hat{v}_t^n) -
 (Qin_{(t,t+1]}^n \Delta t + R_{(t,t+1]}^n \cdot Street\ Area) \le 0
 $$
-  (v ̂_t^n- v_(t-1)^n )-(〖Qin〗_(t-1,t]^n*∆t+R_((t-1,t])^n*Street Area)≤  0
-  (v_(t+1)^n- v ̂_t^n )-(〖Qin〗_(t,t+1]^n*∆t+R_((t,t+1])^n*Street Area)≤ 0
+
 
 The input features used for the data loss were hourly rainfall, hourly tide level, elevation, Topographic Wetness Index (TWI), and Depth-to-Water (DTW). The input features used for the physics loss were hourly inflow volume, hourly outflow volume, hourly rainfall volume, and hourly pipe flow volume. The models included two target features – flood depth and flood volume. The water depth raster was collected from the TUFLOW model through a coupled 1D/2D simulation for each hour throughout all storm events. The water volume was calculated by summing the hourly water depths over the inundated area within the street segment using the zonal statistics tool of ArcGIS Pro. The input data is available on Hydroshare (Roy, 2026).
 
