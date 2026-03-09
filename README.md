@@ -12,6 +12,9 @@ $$
 
 **Data Loss**
 
+Data loss $L_{data}$ is formulated to ensure matching between flood depths 
+$(h = \hat{h})$ and volumes $(v = \hat{v})$.
+
 <!--
 
 
@@ -24,7 +27,7 @@ $$
 
 **Physics Loss**
 
-We used two formulations for physics loss:
+Physics loss $L_{phy}$ is formulated in two ways:
 
   **1. Exact Equation**
   The change of flood volume at the current timestep is equal to the net difference between the total inflow and the total outflow that occurred during the current and previous timestep.
