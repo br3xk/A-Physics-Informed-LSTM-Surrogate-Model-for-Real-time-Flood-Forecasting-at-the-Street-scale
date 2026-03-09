@@ -3,7 +3,9 @@ This is done by adding the mass balance (MB) equation into the customized loss f
 
 Here, the total loss (L_total ) combines the data loss (L_data) with the physics-informed loss (L_phy) as follows:
 
+<!--
 L_total= α * L_data+ β * L_phy	
+-->
 
 $$
 L_{total} = \alpha L_{data} + \beta L_{phy}
@@ -16,8 +18,6 @@ Data loss $L_{data}$ is formulated to ensure that the predicted flood depths and
 ($(h = \hat{h})$ and $(v = \hat{v})$).
 
 <!--
-
-
 $$
 L_{data} =
 \frac{1}{N}\sum_{n=1}^{N}(h_t^n - \hat{h}_t^n)^2 +
