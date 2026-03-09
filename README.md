@@ -1,7 +1,7 @@
 # A-Physics-Informed-LSTM-Surrogate-Model-for-Real-time-Flood-Forecasting-at-the-Street-scale
 
 Physics-Informed LSTM (PI LSTM) surrogate model is developed for street-scale flood forecasting, treating each street as a control volume for a complex coastal-urban system. 
-This is done by adding the mass balance (MB) equation into the customized loss function of the LSTM surrogate model. 
+This is done by adding the mass balance (MB) equation into the customized loss function of the LSTM surrogate model. This script is implemented in Keras Python.
 
 Here, the total loss (L_total ) combines the data loss (L_data) with the physics-informed loss (L_phy) as follows:
 
@@ -57,13 +57,7 @@ The input features used for the data loss are hourly rainfall, hourly tide level
 The framework for PI LSTM surrogate model is shown in Figure 1.
 
 <img width="975" height="640" alt="image" src="https://github.com/user-attachments/assets/cdcc3e7a-dad5-48fe-ba41-39216af444b5" />
-Figure 1: General framework of PI LSTM model with mass balance equations.
-
-
-
-
-
-
+Figure 1: General framework of PI LSTM model with mass balance equations
 
 
 
