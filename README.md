@@ -1,11 +1,22 @@
 Physics-Informed LSTM (PI LSTM) surrogate model is developed for street-scale flood forecasting, treating each street as a control volume, in a complex coastal-urban system. 
-This is done by adding the mass balance (MB) equation into the customized loss function of the LSTM surrogate model as below: 
+This is done by adding the mass balance (MB) equation into the customized loss function of the LSTM surrogate model. 
 
 Here, the total loss (L_total ) combines the data loss (L_data) with the physics-informed loss (L_phy) as follows:
 
 L_total= α * L_data+ β * L_phy	
 
+$$
+L_{total} = \alpha L_{data} + \beta L_{phy}
+$$
+
+
 **Data Loss**
+
+$$
+L_{data} =
+\frac{1}{N}\sum_{n=1}^{N}(h_t^n - \hat{h}_t^n)^2 +
+\frac{1}{N}\sum_{n=1}^{N}(v_t^n - \hat{v}_t^n)^2
+$$
 
 L_data=1/N ∑_(n=1)^N▒(h_t^n-〖h ̂_t^n〗_  )^2   + 1/N ∑_(n=1)^N▒(v_t^n-v ̂_t^n )^2 
 
