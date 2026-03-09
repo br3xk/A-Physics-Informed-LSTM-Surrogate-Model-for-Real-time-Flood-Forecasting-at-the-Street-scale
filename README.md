@@ -32,7 +32,6 @@ $$
 - Qout_{(t-1,t]}^n \Delta t - Qpipe_{(t-1,t]}^n \Delta t) = 0
 $$
 
-
   **2. Inequality Equation**
   The change of flood volume at the current timestep can not exceed the flow entering the system between the current and previous timestep.
 
