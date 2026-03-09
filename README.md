@@ -6,21 +6,21 @@ L_total= α * L_data+ β * L_phy
 
 
 
-Data Loss
+**Data Loss**
 
 L_data=1/N ∑_(n=1)^N▒(h_t^n-〖h ̂_t^n〗_  )^2   + 1/N ∑_(n=1)^N▒(v_t^n-v ̂_t^n )^2 
 
 
-Physics Loss
+**Physics Loss**
 
 We used two formulations for physics loss.
 
-  1. Exact Equation
+  **1. Exact Equation**
   The change of flood volume at the current timestep is equal to the net difference between the total inflow and the total outflow that occurred during the current and previous timestep.
 
   (v ̂_t^n- v ̂_(t-1)^n)-(〖Qin〗_(t-1,t]^n*∆t+R_((t-1,t])^n*Street Area-〖Qout〗_(t-1,t]^n*∆t-〖Qpipe〗_(t-1,t]^n*∆t) = 0
 
-  3. Inequality Equation
+  **2. Inequality Equation**
   The change of flood volume at the current timestep can not exceed the flow entering the system between the current and previous timestep.
 
   (v ̂_t^n- v_(t-1)^n )-(〖Qin〗_(t-1,t]^n*∆t+R_((t-1,t])^n*Street Area)≤  0
