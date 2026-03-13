@@ -46,7 +46,7 @@ Functionality:
 - Computes data loss and physics loss using a customized loss function
 - Optimizes PI LSTM models based on Bayesian Optimization
 - Selects the best hyperparameters based on 'val_rmse_wd'.
-- Trains PI LSTM model (Inequality) using the best hyperparameters, saves the model, and writes predictions to CSV files.
+- Trains PI LSTM model (Inequality) using the hyperparameters and saves the model.
 
 """
 
@@ -154,7 +154,7 @@ lstm_test_data = ldt.SLF_LSTM_Data(test_data)
 
 
 n_back = 4
-n_ahead = 5
+n_ahead = 5  #extra 1 hour to accomodate groundtruth t+5 for the last timestep t+4
 
 
 forecast_cols = ['RH', 'TD_HR']
@@ -470,8 +470,8 @@ def run_model(hp, return_model=False):
     model.set_weights(best_weights)
     
 
-    'val_rmse_wd'
-    'val'
+
+    'validation set'
     preds = model.predict(validation_x)
     preds = preds.reshape((-1, 4, 2))  # shape: [samples, time, features]
     
@@ -485,11 +485,11 @@ def run_model(hp, return_model=False):
     
     'volume'
     preds_vol = preds[:, : , 1]
-    print("preds_vol", preds_vol.shape)
+    #print("preds_vol", preds_vol.shape)
     validation_y_vol = validation_y[:, :4 , 1]
-    print("validation_y_vol", validation_y_vol.shape)
+    #print("validation_y_vol", validation_y_vol.shape)
     val_rmse_vol_scaled = np.sqrt(np.mean((preds_vol - validation_y_vol)**2))
-    print(f"validation_rmse_vol_scaled: ", val_rmse_vol_scaled)
+    #print(f"validation_rmse_vol_scaled: ", val_rmse_vol_scaled)
     
     '''unscaling'''
     validation_data_1=validation_data.copy()
@@ -539,7 +539,7 @@ def run_model(hp, return_model=False):
     validation_data_1_inv.head()  
     
     
-    ''''unscaled metrics'''
+    '''unscaled metrics'''
     
     'w_depth'
     real_cols = [f'real_y{k}' for k in range(1, n_ahead + 1)]
