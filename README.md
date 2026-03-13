@@ -63,4 +63,4 @@ Figure 1: General framework of PI LSTM model with mass balance equations
 
 **References**
 
-Roy, B. (2026). Input Data for A Physics-Informed LSTM Surrogate Model for Real-time Flood Forecasting at the Street-scale, HydroShare, http://www.hydroshare.org/resource/5748edbcff794649bf384d6dd807b7bd
+Roy, B. (2026). Input data for Physics-Informed LSTM surrogate model for street-scale flood forecasting in Norfolk, Virginia, HydroShare, http://www.hydroshare.org/resource/5748edbcff794649bf384d6dd807b7bd
