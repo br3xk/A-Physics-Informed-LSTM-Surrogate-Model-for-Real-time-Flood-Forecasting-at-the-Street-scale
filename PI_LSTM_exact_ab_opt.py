@@ -48,7 +48,7 @@ Functionality:
 - Optimizes PI LSTM models based on Bayesian Optimization
 - Selects the best hyperparameters based on 'val_rmse_wd'.
 - Trains PI LSTM model (Exact) using the best hyperparameters, saves the model, and writes predictions to CSV files.
-- Trains a baseline LSTM model with data λ = 1 and phy λ = 0, saves the model, and writes predictions to CSV files.
+- Trains a baseline LSTM model with data λ = 1 and phy λ = 0 and saves the model.
 
 """
 
@@ -446,20 +446,24 @@ def run_model(hp, return_model=False):
     model.set_weights(best_weights)
      
     
-    'val_rmse_wd'
-    'val'
+
+    'validation set'
     preds = model.predict(validation_x)
     preds = preds.reshape((-1, 4, 2))  # shape: [samples, time, features]
     
     'water depth'
     preds_wd = preds[:, : , 0]
-    validation_y_wd = validation_y[:, : , 0]
+    #print("preds_wd", preds_wd.shape)
+	validation_y_wd = validation_y[:, : , 0]
+	#print("validation_y_wd", validation_y_wd.shape)
     val_rmse_wd_scaled = np.sqrt(np.mean((preds_wd - validation_y_wd)**2))
-    print(f"validation_rmse_wd_scaled: ", val_rmse_wd_scaled)
+    #print(f"validation_rmse_wd_scaled: ", val_rmse_wd_scaled)
     
     'volume'
     preds_vol = preds[:, : , 1]
+	print("preds_vol", preds_vol.shape)
     validation_y_vol = validation_y[:, : , 1]
+	print("validation_y_vol", validation_y_vol.shape)
     val_rmse_vol_scaled = np.sqrt(np.mean((preds_vol - validation_y_vol)**2))
     print(f"validation_rmse_vol_scaled: ", val_rmse_vol_scaled)
     
@@ -511,7 +515,7 @@ def run_model(hp, return_model=False):
     validation_data_1_inv.head()  
 
 
-    ''''unscaled metrics'''
+    '''unscaled metrics'''
     
     'w_depth'
     real_cols = [f'real_y{k}' for k in range(1, n_ahead + 1)]
@@ -615,6 +619,3 @@ data_driven_model, train_loss_results, train_loss_data_results, train_loss_phy_r
 # # Save the model
 data_driven_model.save(f"1.Result_PI_LSTM_Vol_TUFLOW_Opt_hp/{hp_model}_{trial_all}.h5")
 print(f"Saved {hp_model} to disk")
-
-
-
